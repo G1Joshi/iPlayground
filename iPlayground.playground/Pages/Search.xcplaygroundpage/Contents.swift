@@ -1,15 +1,5 @@
 import Foundation
 
-// MARK: - Measure Execution Time
-
-func measureTime<T>(_ block: () -> T) -> (result: T, time: Double) {
-    let startTime = DispatchTime.now()
-    let result = block()
-    let endTime = DispatchTime.now()
-    let elapsed = endTime.uptimeNanoseconds - startTime.uptimeNanoseconds
-    return (result, Double(elapsed) / 1_000_000)
-}
-
 let numbers = (1 ... 100).map { $0 * 100 }
 let value = 4500
 
@@ -25,12 +15,9 @@ func linearSearch(for value: Int, in numbers: [Int]) -> Int {
     return -1
 }
 
-let linear = measureTime {
+run("Linear Search") {
     linearSearch(for: value, in: numbers)
 }
-
-print("Linear Search Result: \(linear.result)")
-print("Linear Search Time: \(linear.time) ms")
 
 // MARK: - Binary Search
 
@@ -54,12 +41,9 @@ func binarySearch(for value: Int, in numbers: [Int]) -> Int {
     return -1
 }
 
-let binary = measureTime {
+run("Binary Search") {
     binarySearch(for: value, in: numbers)
 }
-
-print("Binary Search Result: \(binary.result)")
-print("Binary Search Time: \(binary.time) ms")
 
 // MARK: - Binary Search Recursive
 
@@ -87,9 +71,6 @@ func binarySearch(for value: Int, in numbers: [Int], low: Int, high: Int) -> Int
     }
 }
 
-let binaryRecursive = measureTime {
+run("Binary Search Recursive") {
     binarySearchRecursive(for: value, in: numbers)
 }
-
-print("Binary Search Recursive Result: \(binaryRecursive.result)")
-print("Binary Search Recursive Time: \(binaryRecursive.time) ms")

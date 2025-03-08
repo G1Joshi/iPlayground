@@ -64,3 +64,16 @@ func pattern5(n: Int) {
 run("Pattern 5") {
     pattern5(n: 5)
 }
+
+func pattern6(n: Int) {
+    for i in 1...n {
+        for j in 1...(n - i + 1) {
+            print(j, terminator: " ")
+        }
+        print()
+    }
+}
+
+run("Pattern 6") {
+    pattern6(n: 5)
+}

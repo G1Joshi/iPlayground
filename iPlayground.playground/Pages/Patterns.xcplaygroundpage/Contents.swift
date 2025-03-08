@@ -51,3 +51,16 @@ func pattern4(n: Int) {
 run("Pattern 4") {
     pattern4(n: 5)
 }
+
+func pattern5(n: Int) {
+    for i in 1...n {
+        for j in 1...(n - i + 1) {
+            print("*", terminator: " ")
+        }
+        print()
+    }
+}
+
+run("Pattern 5") {
+    pattern5(n: 5)
+}

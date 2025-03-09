@@ -96,3 +96,22 @@ func pattern7(n: Int) {
 run("Pattern 7") {
     pattern7(n: 5)
 }
+
+func pattern8(n: Int) {
+    for i in 1...n {
+        for j in 1...i {
+            print(terminator: " ")
+        }
+        for j in 1...(2 * (n - i) + 1) {
+            print("*", terminator: "")
+        }
+        for j in 1...i {
+            print(terminator: " ")
+        }
+        print()
+    }
+}
+
+run("Pattern 8") {
+    pattern8(n: 5)
+}

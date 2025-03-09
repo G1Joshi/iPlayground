@@ -124,3 +124,22 @@ func pattern9(n: Int) {
 run("Pattern 9") {
     pattern9(n: 5)
 }
+
+func pattern10(n: Int) {
+    for i in 1...2 * n - 1 {
+        if i > n {
+            for j in 1...2 * n - i {
+                print("*", terminator: "")
+            }
+        } else {
+            for j in 1...i {
+                print("*", terminator: "")
+            }
+        }
+        print()
+    }
+}
+
+run("Pattern 10") {
+    pattern10(n: 5)
+}

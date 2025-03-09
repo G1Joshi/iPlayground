@@ -115,3 +115,12 @@ func pattern8(n: Int) {
 run("Pattern 8") {
     pattern8(n: 5)
 }
+
+func pattern9(n: Int) {
+    pattern7(n: n)
+    pattern8(n: n)
+}
+
+run("Pattern 9") {
+    pattern9(n: 5)
+}
